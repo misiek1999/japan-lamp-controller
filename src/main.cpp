@@ -19,7 +19,7 @@ CRGB leds[NUM_LEDS];
 
 // Pattern Variables
 int currentPattern = 0;
-const int NUM_PATTERNS = 8;   // Total number of patterns
+const int NUM_PATTERNS = 10;   // Total number of patterns
 
 // Button Variables
 bool lastButtonState = HIGH;
@@ -80,6 +80,12 @@ void loop() {
       break;
     case 7:
       solidColor(CRGB::Blue);
+      break;
+    case 8:
+      solidColor(CRGB::White);
+      break;
+    case 9:
+      solidColor(CRGB::Yellow);
       break;
   }
 
