@@ -58,13 +58,13 @@ void loop() {
   // Display current pattern
   switch(currentPattern) {
     case 0:
-      solidColor(CRGB::Red);
+      colorWave();
       break;
     case 1:
-      solidColor(CRGB::Green);
+      checkerboard();
       break;
     case 2:
-      solidColor(CRGB::Blue);
+      randomSparkle();
       break;
     case 3:
       rainbowPattern();
@@ -73,13 +73,13 @@ void loop() {
       movingDot();
       break;
     case 5:
-      checkerboard();
+      solidColor(CRGB::Red);
       break;
     case 6:
-      colorWave();
+      solidColor(CRGB::Green);
       break;
     case 7:
-      randomSparkle();
+      solidColor(CRGB::Blue);
       break;
   }
 
