@@ -1,5 +1,6 @@
 #include <FastLED.h>
 #include <Arduino.h>
+#include <EEPROM.h>
 
 // LED Matrix Settings
 #define LED_PIN     D4        // Data pin connected to WS2812B
@@ -38,6 +39,16 @@ void randomSparkle();
 
 void setup() {
   Serial.begin(115200);
+
+  // Initialize EEPROM
+  EEPROM.begin(4);
+
+  // Load last pattern from EEPROM
+  currentPattern = EEPROM.read(0);
+  if (currentPattern < 0 || currentPattern >= NUM_PATTERNS) {
+    currentPattern = 0;
+    Serial.println("Invalid pattern in EEPROM, resetting to 0.");
+  }
 
   // Initialize LED Matrix
   FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS);
@@ -111,6 +122,9 @@ void checkButton() {
         Serial.print("Pattern changed to: ");
         Serial.println(currentPattern);
         FastLED.clear();
+        // Save current pattern to EEPROM
+        EEPROM.write(0, currentPattern);
+        EEPROM.commit();
       }
     }
   }
