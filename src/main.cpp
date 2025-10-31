@@ -8,7 +8,7 @@
 #define NUM_LEDS    (MATRIX_WIDTH * MATRIX_HEIGHT)
 #define LED_TYPE    WS2812B
 #define COLOR_ORDER GRB
-#define BRIGHTNESS  50        // 0-255
+#define BRIGHTNESS  100        // 0-255
 
 // Button Settings
 #define BUTTON_PIN  D2        // Button pin (connect to GND when pressed)
