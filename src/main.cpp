@@ -11,7 +11,7 @@
 #define BRIGHTNESS  100        // 0-255
 
 // Button Settings
-#define BUTTON_PIN  D2        // Button pin (connect to GND when pressed)
+#define BUTTON_PIN  D3        // Button pin (connect to GND when pressed)
 #define DEBOUNCE_DELAY 50     // Debounce time in milliseconds
 
 // LED Array
